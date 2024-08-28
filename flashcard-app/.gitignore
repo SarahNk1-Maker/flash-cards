@@ -36,3 +36,4 @@ yarn-error.log*
 # Config files that might contain sensitive information
 config.js
 config.json
+.vercel
