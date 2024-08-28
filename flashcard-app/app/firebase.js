@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+//import { getAnalytics } from "firebase/analytics";
 // import { getAuth } from "firebase/auth"; // Uncomment if using Firebase Authentication
  import { getFirestore } from "firebase/firestore"; // Uncomment if using Firestore
 
@@ -17,11 +17,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Initialize Analytics (only if window is defined, for SSR compatibility)
-const analytics = typeof window !== "undefined" ? getAnalytics(app) : null;
+//const analytics = typeof window !== "undefined" ? getAnalytics(app) : null;
 
 // Initialize other Firebase services as needed
 //const auth = getAuth(app); // Uncomment if using Firebase Authentication
  const db = getFirestore(app); // Uncomment if using Firestore
 
 // Export the initialized services
-export { app, analytics, db };
+export { app, db };
