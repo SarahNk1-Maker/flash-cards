@@ -26,3 +26,4 @@ build/
 
 # Ignore any sensitive or private files
 secrets.json
+.vercel

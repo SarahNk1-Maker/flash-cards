@@ -1,5 +1,1 @@
-{
-  "node": {},
-  "edge": {},
-  "encryptionKey": "dPSKSGOj9GQnLCAGKOpUju3r8pTZhnWOKMVk6hm8LRk="
-}
+{"node":{"54c5d93483535337f3cdb10459f9b1262ae848b2":{"workers":{"app/_not-found/page":"52026","app/flashcardView/page":"52026","app/flashcardgeneration/page":"52026","app/sign-up/page":"52026","app/page":"52026","app/sign-in/page":"52026"},"layer":{"app/_not-found/page":"action-browser","app/flashcardView/page":"action-browser","app/flashcardgeneration/page":"action-browser","app/sign-up/page":"action-browser","app/page":"action-browser","app/sign-in/page":"action-browser"}}},"edge":{},"encryptionKey":"YhsidgWPCOZkfE9c1PLfxc7mgGVxr4OmPbmV6hyxP/w="}
