@@ -59,7 +59,7 @@ export default function Home() {
             const response = await fetch('/api/flashcardBack', { // Use the correct API route
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({  content: 'Generate flashcards'  }),
+                body: JSON.stringify({ content: 'Generate flashcards' }),
             });
 
             if (!response.ok) {
@@ -102,6 +102,7 @@ export default function Home() {
                 <Head>
                     <title>Flashcard SaaS</title>
                     <meta name="description" content="Create flashcard from your text" />
+                    <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <br />
                 <Stack direction="row" spacing={3} justifyContent="flex-end">
@@ -250,25 +251,19 @@ export default function Home() {
                                 <Typography variant="h4" gutterBottom color="white" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
                                     Basic
                                 </Typography>
-                                <Typography variant="h6" gutterBottom color="white" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
-                                    $5 / month
-                                </Typography>
                                 <Typography color="white" sx={{ fontFamily: 'Ariel', fontWeight: 'medium', textAlign: 'center' }}>
-                                    Access to basic flashcard features and limited storage.
+                                    For $9.99/month, unlock additional features and up to 100 cards storage.
                                 </Typography>
                                 <Button
                                     variant="contained"
                                     sx={{
                                         mt: 2,
-                                        bgcolor: '#9c27b0', // light lavender
+                                        bgcolor: '#9c27b0',
                                         '&:hover': {
-                                            bgcolor: '#6d1b7b', // Darker shade of lavender
+                                            bgcolor: '#6d1b7b',
                                         },
                                     }}
-                                    onClick={() => {
-                                        setSubscriptionType('basic');
-                                        handleSubmit();
-                                    }}
+                                    onClick={() => setSubscriptionType('basic')}
                                 >
                                     Choose Basic
                                 </Button>
@@ -278,8 +273,8 @@ export default function Home() {
                         <Grid item xs={12} md={4} sx={{ display: 'flex', justifyContent: 'center' }}>
                             <Box sx={{
                                 p: 3,
-                                width: 250,
-                                height: 250,
+                                width: 250, // Fixed width
+                                height: 250, // Fixed height to maintain a square shape
                                 border: "1px solid",
                                 borderColor: "grey.800",
                                 borderRadius: 2,
@@ -295,13 +290,10 @@ export default function Home() {
                                 }
                             }}>
                                 <Typography variant="h4" gutterBottom color="white" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
-                                    Pro
-                                </Typography>
-                                <Typography variant="h6" gutterBottom color="white" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
-                                    $10 / month
+                                    Premium
                                 </Typography>
                                 <Typography color="white" sx={{ fontFamily: 'Ariel', fontWeight: 'medium', textAlign: 'center' }}>
-                                    Unlimited flashcards and storage, with priority support.
+                                    For $19.99/month, get full access to all features and unlimited cards storage.
                                 </Typography>
                                 <Button
                                     variant="contained"
@@ -312,36 +304,47 @@ export default function Home() {
                                             bgcolor: '#6d1b7b',
                                         },
                                     }}
-                                    onClick={() => {
-                                        setSubscriptionType('pro');
-                                        handleSubmit();
-                                    }}
+                                    onClick={() => setSubscriptionType('premium')}
                                 >
-                                    Choose Pro
+                                    Choose Premium
                                 </Button>
                             </Box>
                         </Grid>
                     </Grid>
-
-                    <Box
-                        sx={{ mt: 4, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-                        ref={checkoutRef}
+                </Box>
+                <Box
+                    ref={checkoutRef}
+                    sx={{
+                        my: 5,
+                        py: 5,
+                        px: 3,
+                        borderRadius: 2,
+                        border: '1px solid',
+                        borderColor: 'grey.800',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: '#1a1a1a',
+                    }}
+                >
+                    <Typography variant="h3" component="h2" gutterBottom color="white" sx={{ fontWeight: 700, mb: 4 }}>
+                        Checkout
+                    </Typography>
+                    <Button
+                        variant="contained"
+                        sx={{
+                            bgcolor: '#9c27b0',
+                            '&:hover': {
+                                bgcolor: '#6d1b7b',
+                            },
+                            py: 2,
+                            px: 4,
+                        }}
+                        onClick={handleSubmit}
                     >
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            disabled={!subscriptionType}
-                            sx={{
-                                bgcolor: '#9c27b0', // light lavender
-                                '&:hover': {
-                                    bgcolor: '#6d1b7b', // Darker shade of lavender
-                                },
-                            }}
-                            onClick={handleSubmit}
-                        >
-                            Proceed to Checkout
-                        </Button>
-                    </Box>
+                        Subscribe
+                    </Button>
                 </Box>
             </Container>
         </Box>
