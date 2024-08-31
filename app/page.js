@@ -23,7 +23,7 @@ export default function Home() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                origin: origin,
+                origin: 'http://localhost:3000',
             },
             body: JSON.stringify({ subscriptionType })
         });
