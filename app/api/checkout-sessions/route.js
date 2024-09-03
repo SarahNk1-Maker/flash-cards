@@ -4,8 +4,13 @@ import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_API_KEY, {
   apiVersion: '2024-06-20',
 });
+//New lines
 
-const BASE_URL = 'http://localhost:3000'; // Update this with your production URL if needed
+const BASE_URL = process.env.NODE_ENV === 'production'
+  ? 'https://flash-cards-r2al.vercel.app' // Replace with your Vercel domain
+  : 'http://localhost:3000';
+//old lines 
+//const BASE_URL = 'http://localhost:3000'; // Update this with your production URL if needed
 
 export async function POST(req) {
   try {
