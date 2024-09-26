@@ -1,4 +1,6 @@
 {
-  "/api/checkout-sessions/route": "app/api/checkout-sessions/route.js",
-  "/page": "app/page.js"
+  "/flashcardView/page": "app/flashcardView/page.js",
+  "/page": "app/page.js",
+  "/flashcardgeneration/page": "app/flashcardgeneration/page.js",
+  "/api/flashcardBack/route": "app/api/flashcardBack/route.js"
 }
